@@ -12,7 +12,7 @@ public class BinarySquaredMatrix {
     private final int[][] values;
 
     public BinarySquaredMatrix(int size) {
-        this(generateRandomBinaryMatrix(size));
+        this(generateRandomMatrix(size));
     }
 
     public BinarySquaredMatrix(int[][] values) {
@@ -51,13 +51,13 @@ public class BinarySquaredMatrix {
         return values.length;
     }
 
-    private static int[][] generateRandomBinaryMatrix(int size) {
+    private static int[][] generateRandomMatrix(int size) {
         Random random = new Random();
         int[][] result = new int[size][size];
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                result[i][j] = random.nextInt(2);
+                result[i][j] = random.nextInt(10);
             }
         }
         return result;

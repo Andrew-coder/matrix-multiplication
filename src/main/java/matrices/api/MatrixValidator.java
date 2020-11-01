@@ -6,8 +6,7 @@ class MatrixValidator {
 
     static boolean isValidMatrix(int[][] matrix) {
         return Objects.nonNull(matrix)
-                && isSquaredMatrix(matrix)
-                && isBinaryMatrix(matrix);
+                && isSquaredMatrix(matrix);
     }
 
     private static boolean isSquaredMatrix(int[][] matrix) {

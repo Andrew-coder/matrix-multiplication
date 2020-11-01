@@ -12,7 +12,7 @@ public class SequentialMatrixMultiplicationService extends MatrixMultiplicationS
             for (int j = 0; j < firstMatrix.length; ++j) {
                 int sum = 0;
                 for (int k = 0; k < firstMatrix.length; ++k) {
-                    sum = (sum + (firstMatrix[i][k] & secondTransposedMatrix[j][k])) % 2;
+                    sum = (sum + (firstMatrix[i][k] * secondTransposedMatrix[j][k]));
                 }
                 multiplicationResult[i][j] = sum;
             }

@@ -12,22 +12,22 @@ public class BinarySquaredMatrixTest {
     public void multiply_shouldMultiplyTwoSquareMatricesWithSizeThree() {
         // Given
         int[][] firstMatrixValues = new int[][]{
-                {1, 0, 1},
-                {0, 0, 1},
-                {1, 1, 1}};
+                {2, 0, 1},
+                {1, 3, 1},
+                {1, 2, 1}};
         int[][] secondMatrixValues = new int[][]{
                 {0, 0, 1},
-                {1, 1, 1},
-                {0, 0, 0}
+                {2, 1, 1},
+                {3, 0, 1}
         };
 
         BinarySquaredMatrix firstMatrix = new BinarySquaredMatrix(firstMatrixValues);
         BinarySquaredMatrix secondMatrix = new BinarySquaredMatrix(secondMatrixValues);
 
         int[][] expectedMatrixValues = new int[][] {
-                {0, 0, 1},
-                {0, 0, 0},
-                {1, 1, 0}
+                {3, 0, 3},
+                {9, 3, 5},
+                {7, 2, 4}
         };
 
         // When
@@ -41,22 +41,22 @@ public class BinarySquaredMatrixTest {
     public void multiplyParallel_shouldMultiplyTwoSquareMatricesWithSizeThree() {
         // Given
         int[][] firstMatrixValues = new int[][]{
-                {1, 0, 1},
-                {0, 0, 1},
-                {1, 1, 1}};
+                {2, 0, 1},
+                {1, 3, 1},
+                {1, 2, 1}};
         int[][] secondMatrixValues = new int[][]{
                 {0, 0, 1},
-                {1, 1, 1},
-                {0, 0, 0}
+                {2, 1, 1},
+                {3, 0, 1}
         };
 
         BinarySquaredMatrix firstMatrix = new BinarySquaredMatrix(firstMatrixValues);
         BinarySquaredMatrix secondMatrix = new BinarySquaredMatrix(secondMatrixValues);
 
         int[][] expectedMatrixValues = new int[][] {
-                {0, 0, 1},
-                {0, 0, 0},
-                {1, 1, 0}
+                {3, 0, 3},
+                {9, 3, 5},
+                {7, 2, 4}
         };
 
         // When
@@ -73,18 +73,6 @@ public class BinarySquaredMatrixTest {
                 {1, 0},
                 {0, 0,},
                 {1, 1}};
-
-        // When
-        new BinarySquaredMatrix(nonSquaredMatrixValues);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void newBinarySquaredMatrix_shouldThrowIllegalArgumentException_whenMatrixContainsNonBinaryElements() {
-        // Given
-        int[][] nonSquaredMatrixValues = new int[][]{
-                {1, 0, 1},
-                {0, 4, 1},
-                {1, 1, 0}};
 
         // When
         new BinarySquaredMatrix(nonSquaredMatrixValues);

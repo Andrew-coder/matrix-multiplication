@@ -21,7 +21,7 @@ public class SimpleMultiplicationTask implements Runnable {
         for (int[] matrixRow : matrix) {
             int sum = 0;
             for (int k = 0; k < matrixLength; ++k) {
-                sum = (sum + (row[k] & matrixRow[k])) % 2;
+                sum = (sum + (row[k] * matrixRow[k]));
             }
             multiplicationResult[currentOffset] = sum;
             ++currentOffset;
